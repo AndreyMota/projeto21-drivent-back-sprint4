@@ -20,7 +20,7 @@ export const bookingController = {
         const newBookingId = await bookingService.createNewBooking(userId, roomId);
 
         return res.status(200).json({
-            bookingId: newBookingId,
+            bookingId: newBookingId.id,
         });
     },
 
