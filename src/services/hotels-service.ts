@@ -3,7 +3,7 @@ import { invalidDataError, notFoundError } from '@/errors';
 import { cannotListHotelsError } from '@/errors/cannot-list-hotels-error';
 import { enrollmentRepository, hotelRepository, ticketsRepository } from '@/repositories';
 
-async function validateUserBooking(userId: number) {
+export async function validateUserBooking(userId: number) {
   const enrollment = await enrollmentRepository.findWithAddressByUserId(userId);
   if (!enrollment) throw notFoundError();
 
